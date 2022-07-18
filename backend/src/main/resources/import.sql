@@ -1,1 +1,0 @@
-INSERT INTO TB_MAINTENANCE(mechanics_name,price,description,date) VALUES ('Barry Allen',121,'Lantern malfunction','2022-06-16');

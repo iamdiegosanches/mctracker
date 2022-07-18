@@ -11,9 +11,10 @@ import java.time.LocalDate;
 public class Maintenance {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String mechanicsName;
+    private String workshopName;
     private Double price;
     @Column(columnDefinition = "TEXT")
     private String description;
