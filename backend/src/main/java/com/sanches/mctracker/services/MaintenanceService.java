@@ -8,9 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.ZoneId;
+import java.util.Optional;
 
 @Service
 public class MaintenanceService {
@@ -18,17 +16,16 @@ public class MaintenanceService {
     @Autowired
     private MaintenanceRepository maintenanceRepository;
 
-    public Page<Maintenance> findMaintenance(Pageable pageable) {
-
-        LocalDate today = LocalDate.ofInstant(Instant.now(), ZoneId.systemDefault());
-
-
-
-        return maintenanceRepository.findAll(pageable);
-    }
-
     @Transactional
     public Maintenance saveMaintenance(Maintenance maintenance) {
         return maintenanceRepository.save(maintenance);
+    }
+
+    public Page<Maintenance> findMaintenance(Pageable pageable) {
+        return maintenanceRepository.findAll(pageable);
+    }
+
+    public Optional<Maintenance> findById(long id) {
+        return maintenanceRepository.findById(id);
     }
 }

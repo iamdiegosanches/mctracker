@@ -11,6 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Optional;
+
 @RestController
 @RequestMapping(value = "/maintenance")
 public class MaintenanceController {
@@ -29,6 +31,15 @@ public class MaintenanceController {
     public ResponseEntity<Page<Maintenance>> findMaintenance(Pageable pageable) {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(maintenanceService.findMaintenance(pageable));
+    }
+
+    @DeleteMapping
+    public ResponseEntity<Object> deleteMaintenance(@PathVariable(value = "id") Long id) {
+        Optional<Maintenance> maintenanceOptional = maintenanceService.findById(id);
+        if(!maintenanceOptional.isPresent()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Not found");
+        }
+        return ResponseEntity.status(HttpStatus.OK).body("Deleted successfully");
     }
 
 }
