@@ -9,10 +9,10 @@ function MaintenanceList() {
     const [maintenance, setMaintenance] = useState<Maintenance[]>([]);
 
     useEffect(() => {
-        axios.get(`${BASE_URL}/maitenance`)
+        axios.get(`${BASE_URL}/maintenance`)
             .then(response => {
                 setMaintenance(response.data.content);
-            })
+            });
     }, []);
 
     return (
@@ -20,17 +20,17 @@ function MaintenanceList() {
             <h3>List of Maintenance</h3>
             <thead>
             <tr>
-                <th className="show576">Data</th>
-                <th>Vendedor </th>
-                <th className="show992">Visitas</th>
-                <th className="show992">Vendas</th>
-                <th>Total </th>
+                <th className="show576">Nome do mecânico</th>
+                <th>Nome da oficina </th>
+                <th className="show992">Local</th>
+                <th className="show992">Descrição da manutenção</th>
+                <th className="show992">Preço</th>
             </tr>
             </thead>
             <tbody>
             {maintenance.map(maintenance => {
                 return(
-                    <tr key={maintenance.price}>
+                    <tr key={JSON.stringify(maintenance.id)}>
                         <td className="c1">{maintenance.mechanicsName}</td>
                         <td className="c1">{maintenance.workshopName}</td>
                         <td className="c1">{maintenance.workshopLocation}</td>
