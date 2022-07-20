@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import {Maintenance} from "../../models/maintenance";
 import {BASE_URL} from "../../utils/request";
 import axios from "axios";
+import DeleteButton from "../DeleteButton";
 
 
 function MaintenanceList() {
@@ -36,6 +37,7 @@ function MaintenanceList() {
                         <td className="c1">{maintenance.workshopLocation}</td>
                         <td className="c1">{maintenance.description}</td>
                         <td className="c1">R$ {maintenance.price}</td>
+                        <DeleteButton maintenanceId={maintenance.id}/>
                     </tr>
                 )
             })}
