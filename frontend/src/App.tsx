@@ -4,8 +4,6 @@ import AddMaintenance from "./components/AddMaintenance";
 
 
 function App() {
-
-
   return (
     <div className="App">
         <Header />

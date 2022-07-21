@@ -1,136 +1,94 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
-}
-
-a {
-    text-decoration: none;
-}
-
-li {
-    list-style: none;
-}
-
-.container {
-    max-width: 1200px;
-    height: 100%;
+img {
     width: 100%;
-    margin: 0 auto;
-    padding: 0 16px;
 }
 
-
-#content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    max-height: 100vh;
-    overflow: auto;
-    height: 100%;
-    transition: all .3s ease;
-}
-#content.active {
-    left: 60%;
-    top: 10vh;
-    max-height: 80vh;
-    border-radius: 20px;
-}
 nav {
     width: 100%;
-    height: 64px;
-    background: #fff;
+    background: #ffffff;
+    padding: 1rem 0;
 }
+
 nav .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
+    width: 96%;
+    margin: 0 auto;
 }
-nav .brand {
-    font-size: 24px;
-    font-weight: 600;
-    color: #222;
+
+nav img.logo {
+    width: 5rem;
 }
-nav .nav-menu {
+
+nav .search-bar {
+    background: #f0eff5;
+    padding: 8px 1.6rem;
+    width: 32vw;
+    border-radius: 6px;
     display: flex;
     align-items: center;
-    grid-gap: 28px;
+    gap: 1rem;
+    color: #86848c;
+    left: 15%;
 }
-nav .nav-menu a {
-    color: #222;
-    transition: all .3s ease;
+
+nav .search-bar input[type="search"] {
+    color: #27282f;
+    background: transparent;
+    width: 100%;
 }
-nav .nav-menu a:hover {
-    color: #555;
+
+nav .search-bar input[type="search"]::placeholder {
+    color: #56555e;
 }
-nav .nav-menu .close-btn {
-    font-size: 20px;
-    cursor: pointer;
-    display: none;
-    color: #fff;
-    position: absolute;
-    top: 16px;
-    right: 24px;
-}
-nav .toggle-menu {
-    font-size: 20px;
-    cursor: pointer;
-    display: none;
-}
-#content section {
-    height: calc(100vh - 64px);
-    background: #eee;
-}
-#content section .container {
+
+nav .profile-area {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+nav .profile-area .theme-btn {
+    display: flex;
+    background: #f0eff5;
+    width: 5rem;
+    height: 2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+nav .profile-area .theme-btn span {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
     justify-content: center;
+    font-size: 1.3rem;
+}
+
+nav .profile-area .theme-btn .active {
+    background: #27282f;
+    border-radius: 6px;
+    color: white;
+}
+
+nav .profile-area .profile {
+    display: flex;
+    gap: 1rem;
     align-items: center;
 }
-#content section h1 {
-    font-size: 56px;
-    font-weight: 500;
-    color: #aaa;
+
+nav .profile-area .profile-photo {
+    display: block
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
-
-
-@media screen and (max-width: 576px) {
-    nav .toggle-menu {
-        display: block;
-    }
-    nav .nav-menu .close-btn {
-        display: block;
-    }
-    nav .nav-menu {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 24px;
-        grid-gap: 12px;
-        z-index: -1;
-    }
-    nav .nav-menu::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, .5);
-        z-index: -1;
-    }
-    nav .nav-menu a {
-        color: #fff;
-    }
-    nav .nav-menu a:hover {
-        color: #aaa;
-    }
+nav .profile-area button {
+    display: none;
 }

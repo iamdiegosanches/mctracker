@@ -1,7 +1,7 @@
 import axios from "axios";
 import "./style.css"
 import {BASE_URL} from "../../utils/request";
-import {useState} from "react";
+import React, {useState} from "react";
 
 function handleClick( name : string, wName : string, location: string, price: number, desc: string) {
     axios.post(`${BASE_URL}/maintenance`, {
