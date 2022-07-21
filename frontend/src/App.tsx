@@ -1,5 +1,6 @@
 import Header from "./components/Header";
 import MaintenanceList from "./components/MaintenanceCard";
+import AddMaintenance from "./components/AddMaintenance";
 
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
     <div className="App">
         <Header />
         <MaintenanceList />
+        <AddMaintenance />
     </div>
   )
 }

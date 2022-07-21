@@ -2,8 +2,6 @@ import {BASE_URL} from "../../utils/request";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import maintenanceCard from "../MaintenanceCard";
-import MaintenanceCard from "../MaintenanceCard";
 
 type Props = {
     maintenanceId: string;
