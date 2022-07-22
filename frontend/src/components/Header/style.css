@@ -57,7 +57,6 @@ nav .profile-area .theme-btn {
     height: 2rem;
     border-radius: 6px;
     cursor: pointer;
-    z-index: 2;
 }
 
 nav .profile-area .theme-btn span {
