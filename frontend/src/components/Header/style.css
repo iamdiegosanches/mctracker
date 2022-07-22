@@ -82,7 +82,7 @@ nav .profile-area .profile {
 }
 
 nav .profile-area .profile-photo {
-    display: block
+    display: block;
     width: 3rem;
     height: 3rem;
     border-radius: 50%;

@@ -2,6 +2,7 @@ import {BASE_URL} from "../../utils/request";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import "./style.css"
 
 type Props = {
     maintenanceId: string;
@@ -16,8 +17,8 @@ function handleClick(id : string) {
 
 function DeleteButton( {maintenanceId} : Props) {
     return (
-        <div onClick={() => handleClick(maintenanceId)}>
-            <p>Delete</p>
+        <>
+            <button onClick={() => handleClick(maintenanceId)} className="btn" type="button"><span>Delete</span></button>
             <ToastContainer
                 position="bottom-left"
                 autoClose={4000}
@@ -29,7 +30,7 @@ function DeleteButton( {maintenanceId} : Props) {
                 draggable
                 pauseOnHover
             />
-        </div>
+        </>
     )
 }
 

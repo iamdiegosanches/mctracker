@@ -4,6 +4,8 @@ import {BASE_URL} from "../../utils/request";
 import axios from "axios";
 import DeleteButton from "../DeleteButton";
 
+import "./style.css"
+
 
 function MaintenanceList() {
 
@@ -18,30 +20,21 @@ function MaintenanceList() {
 
     return (
         <div className="container">
-            <h3>List of Maintenance</h3>
-            <thead>
-            <tr>
-                <th className="show576">Nome do mecânico</th>
-                <th>Nome da oficina </th>
-                <th className="show992">Local</th>
-                <th className="show992">Descrição da manutenção</th>
-                <th className="show992">Preço</th>
-            </tr>
-            </thead>
-            <tbody>
+            <h1>Lista de manutenções</h1>
+            <div className="parent">
             {maintenance.map(maintenance => {
                 return(
-                    <tr key={JSON.stringify(maintenance.id)}>
-                        <td className="c1">{maintenance.mechanicsName}</td>
-                        <td className="c1">{maintenance.workshopName}</td>
-                        <td className="c1">{maintenance.workshopLocation}</td>
-                        <td className="c1">{maintenance.description}</td>
+                    <div className="content" key={JSON.stringify(maintenance.id)}>
+                        <td className="c1">Nome do mecânico: {maintenance.mechanicsName}</td>
+                        <td className="c1">Nome da oficina: {maintenance.workshopName}</td>
+                        <td className="c1">Local: {maintenance.workshopLocation}</td>
+                        <td className="c1">Descrição da manutenção: {maintenance.description}</td>
                         <td className="c1">R$ {maintenance.price}</td>
                         <DeleteButton maintenanceId={maintenance.id}/>
-                    </tr>
+                    </div>
                 )
             })}
-            </tbody>
+            </div>
         </div>
     )
 }
