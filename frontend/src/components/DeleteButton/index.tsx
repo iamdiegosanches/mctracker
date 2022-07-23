@@ -19,7 +19,9 @@ function handleClick(id : string) {
 function DeleteButton( {maintenanceId} : Props) {
     return (
         <>
-            <button onClick={() => handleClick(maintenanceId)} className="btn" type="button"><span>Delete</span></button>
+            <button onClick={() => handleClick(maintenanceId)} className="btn" type="button">
+                <span className="material-symbols-sharp">delete</span>
+            </button>
             <ToastContainer
                 position="bottom-right"
                 autoClose={1000}

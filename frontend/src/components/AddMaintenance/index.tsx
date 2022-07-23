@@ -22,7 +22,10 @@ function AddMaintenance() {
 
     return (
         <>
-            <a href={"#modal-opened"} className="link-1" id="modal-closed">+</a>
+            <a href={"#modal-opened"} className="link-1" id="modal-closed">
+                <span className="material-symbols-sharp">add_circle</span>
+
+            </a>
 
             <div className="modal-container" id="modal-opened">
                 <div className="modal">
@@ -64,7 +67,9 @@ function AddMaintenance() {
                             handleClick(mechanicsName, workshopName, workshopLocation, price, textAreaValue)} />
                     </form>
 
-                    <a href={"#modal-closed"} className="link-2"></a>
+                    <a href={"#modal-closed"} className="link-2">
+                        <span className="material-symbols-sharp">cancel</span>
+                    </a>
 
                 </div>
             </div>

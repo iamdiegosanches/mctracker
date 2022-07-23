@@ -5,6 +5,7 @@ import axios from "axios";
 import DeleteButton from "../DeleteButton";
 
 import "./style.css"
+import AddMaintenance from "../AddMaintenance";
 
 
 function MaintenanceList() {
@@ -20,11 +21,14 @@ function MaintenanceList() {
 
     return (
         <div className="container">
-            <h1>Lista de manutenções</h1>
+            <div className="head">
+                <h1>Lista de Manutenções</h1>
+            </div>
             <div className="parent">
             {maintenance.map(maintenance => {
                 return(
                     <div className="content" key={JSON.stringify(maintenance.id)}>
+                        <h2>Detalhes da Manutenção</h2>
                         <td >Nome do mecânico: {maintenance.mechanicsName}</td>
                         <td >Nome da oficina: {maintenance.workshopName}</td>
                         <td >Local: {maintenance.workshopLocation}</td>
@@ -34,6 +38,7 @@ function MaintenanceList() {
                     </div>
                 )
             })}
+                <AddMaintenance />
             </div>
         </div>
     )
