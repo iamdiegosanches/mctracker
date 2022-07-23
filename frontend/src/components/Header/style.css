@@ -5,8 +5,6 @@ img {
 nav {
     width: 100%;
     background: #ffffff;
-    padding: 1rem 0;
-
 }
 
 nav .container {
@@ -19,7 +17,7 @@ nav .container {
 }
 
 nav img.logo {
-    width: 5rem;
+    width: 11rem;
 }
 
 nav .search-bar {
@@ -51,24 +49,6 @@ nav .profile-area {
     gap: 4rem;
 }
 
-nav .profile-area .theme-btn {
-    display: flex;
-    background: #f0eff5;
-    width: 5rem;
-    height: 2rem;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-nav .profile-area .theme-btn span {
-    width: 50%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.3rem;
-}
-
 nav .profile-area .theme-btn .active {
     background: #27282f;
     border-radius: 6px;
@@ -78,7 +58,10 @@ nav .profile-area .theme-btn .active {
 nav .profile-area .profile {
     display: flex;
     gap: 1rem;
-    align-items: center;
+    align-items: end;
+
+    flex-direction: row;
+    padding: 0;
 }
 
 nav .profile-area .profile-photo {
