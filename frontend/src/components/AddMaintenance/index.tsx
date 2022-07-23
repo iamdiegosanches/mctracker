@@ -28,31 +28,31 @@ function AddMaintenance() {
                 <div className="modal">
 
                     <form>
-                        <label htmlFor="fname">Nome do mecânico</label>
+                        <label htmlFor="fname">Nome do mecânico:</label>
                         <input type="text" id="mName" value={mechanicsName}
                                onChange={(
                                    ev: React.ChangeEvent<HTMLInputElement>,): void => setMechanicsName(ev.target.value)}
                                placeholder="Nome do mecanico..." />
 
-                        <label htmlFor="fname">Nome da oficina</label>
+                        <label htmlFor="fname">Nome da oficina:</label>
                         <input type="text" id="fname" value={workshopName}
                                onChange={(
                                    ev: React.ChangeEvent<HTMLInputElement>,): void => setWorkshopName(ev.target.value)}
                                placeholder="Nome da oficina..." />
 
-                        <label htmlFor="fname">Local</label>
+                        <label htmlFor="fname">Local:</label>
                         <input type="text" id="fname" value={workshopLocation}
                                onChange={(
                                    ev: React.ChangeEvent<HTMLInputElement>,): void => setWorkshopLocation(ev.target.value)}
                                placeholder="Local..." />
 
-                        <label htmlFor="fname">Descrição da manutenção</label>
+                        <label htmlFor="fname">Descrição da manutenção:</label>
                         <textarea id="fname" value={textAreaValue}
                                   onChange={(
                                       ev: React.ChangeEvent<HTMLTextAreaElement>,): void => setTextAreaValue(ev.target.value)}
                                   placeholder="Descrição da manutenção..."/>
 
-                        <label htmlFor="fname">Preço</label>
+                        <label htmlFor="fname">Preço:</label>
                         <input type="number" id="fname" value={price}
                                onChange={(
                                    ev: React.ChangeEvent<HTMLInputElement>,): void => {setPrice(
