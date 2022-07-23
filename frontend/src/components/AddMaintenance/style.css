@@ -1,5 +1,3 @@
-/* modal */
-/* =============================================== */
 .modal-container {
     position: fixed;
     top: 0;
@@ -13,7 +11,6 @@
     background: hsla(0, 0%, 40%, .6);
 }
 
-/* using :target */
 .modal-container:target {
     display: flex;
 }
@@ -34,25 +31,21 @@
     border-bottom: 1px solid hsla(0, 0%, 100%, .4);
 }
 
-/* links */
-/* =============================================== */
 .link-1 {
     font-family: georgia, serif;
-    color: #FFFFFF !important;
+    color: #000000 !important;
     font-size: 14px;
-    text-shadow: 1px 1px 0 #7CACDE;
-    box-shadow: 6px 1px 6px #BEE2F9;
-    padding: 10px 25px;
-    border-radius: 40px;
-    border: 0 solid #1EA30F;
-    background: #14EE05;
-    background: linear-gradient(to top, #14EE05, #0ACF11);
+    background: #FFFFFF;
+    padding: 70px 70px;
+    border-radius: 10px;
+    position: fixed;
+    margin: 10px;
 }
+
 
 .link-1:hover {
     color: #000000 !important;
-    background: #08CF0F;
-    background: linear-gradient(to top, #08CF0F, #18EE11);
+    background: #cccccc;
 }
 
 
@@ -61,19 +54,16 @@
     height: 4rem;
     border: 1px solid hsla(0, 0%, 100%, .4);
     border-radius: 100rem;
-
     color: inherit;
     font-size: 2.2rem;
-
     position: absolute;
     top: 2rem;
     right: 2rem;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     transition: .2s;
+    background: #FFFFFF;
 }
 
 .link-2::before {

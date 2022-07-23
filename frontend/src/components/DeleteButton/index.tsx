@@ -2,6 +2,7 @@ import {BASE_URL} from "../../utils/request";
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 import "./style.css"
 
 type Props = {
@@ -11,8 +12,8 @@ type Props = {
 function handleClick(id : string) {
     axios.delete(`${BASE_URL}/maintenance/${id}`)
         .then(r => (
-            toast.info("Deletado com sucesso")
-        ));
+            toast.info("Deletado com sucesso!"))
+        );
 }
 
 function DeleteButton( {maintenanceId} : Props) {
@@ -20,8 +21,8 @@ function DeleteButton( {maintenanceId} : Props) {
         <>
             <button onClick={() => handleClick(maintenanceId)} className="btn" type="button"><span>Delete</span></button>
             <ToastContainer
-                position="bottom-left"
-                autoClose={4000}
+                position="bottom-right"
+                autoClose={1000}
                 hideProgressBar={false}
                 newestOnTop={false}
                 closeOnClick

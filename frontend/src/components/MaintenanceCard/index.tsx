@@ -25,11 +25,11 @@ function MaintenanceList() {
             {maintenance.map(maintenance => {
                 return(
                     <div className="content" key={JSON.stringify(maintenance.id)}>
-                        <td className="c1">Nome do mecânico: {maintenance.mechanicsName}</td>
-                        <td className="c1">Nome da oficina: {maintenance.workshopName}</td>
-                        <td className="c1">Local: {maintenance.workshopLocation}</td>
-                        <td className="c1">Descrição da manutenção: {maintenance.description}</td>
-                        <td className="c1">R$ {maintenance.price}</td>
+                        <td >Nome do mecânico: {maintenance.mechanicsName}</td>
+                        <td >Nome da oficina: {maintenance.workshopName}</td>
+                        <td >Local: {maintenance.workshopLocation}</td>
+                        <td >Descrição da manutenção: {maintenance.description}</td>
+                        <td >R$ {maintenance.price}</td>
                         <DeleteButton maintenanceId={maintenance.id}/>
                     </div>
                 )

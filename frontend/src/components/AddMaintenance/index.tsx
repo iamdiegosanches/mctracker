@@ -22,7 +22,7 @@ function AddMaintenance() {
 
     return (
         <>
-            <a href={"#modal-opened"} className="link-1" id="modal-closed">Open Modal</a>
+            <a href={"#modal-opened"} className="link-1" id="modal-closed">+</a>
 
             <div className="modal-container" id="modal-opened">
                 <div className="modal">
