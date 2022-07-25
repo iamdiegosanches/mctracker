@@ -16,8 +16,9 @@ nav .container {
     margin: 0 auto;
 }
 
-nav img.logo {
-    width: 11rem;
+
+.logo {
+    width: 9rem;
 }
 
 nav .search-bar {
@@ -47,12 +48,6 @@ nav .profile-area {
     align-items: center;
     justify-content: space-between;
     gap: 4rem;
-}
-
-nav .profile-area .theme-btn .active {
-    background: #27282f;
-    border-radius: 6px;
-    color: white;
 }
 
 nav .profile-area .profile {
