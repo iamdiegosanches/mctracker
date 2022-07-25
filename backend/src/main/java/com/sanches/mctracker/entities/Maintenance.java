@@ -22,6 +22,7 @@ public class Maintenance implements Serializable {
     private String workshopName;
     private String workshopLocation;
     private Double price;
+    private Double piecePrice;
     @Column(columnDefinition = "TEXT")
     private String description;
     private LocalDate date;

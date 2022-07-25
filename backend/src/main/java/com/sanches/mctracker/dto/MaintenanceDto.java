@@ -10,6 +10,7 @@ public class MaintenanceDto {
     private String workshopName;
     private String workshopLocation;
     private Double price;
+    private Double piecePrice;
     private String description;
     private LocalDate date;
 
