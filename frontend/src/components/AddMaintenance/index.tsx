@@ -2,6 +2,7 @@ import axios from "axios";
 import "./style.css"
 import {BASE_URL} from "../../utils/request";
 import React, {useState} from "react";
+import DatePicker from "react-datepicker";
 
 function handleClick( name : string, wName : string, location: string, price: number, desc: string) {
     axios.post(`${BASE_URL}/maintenance`, {
@@ -19,6 +20,9 @@ function AddMaintenance() {
     const [workshopLocation, setWorkshopLocation] = useState<string>("");
     const [textAreaValue, setTextAreaValue] = useState<string>("");
     const [price, setPrice] = useState<number>(0);
+
+    const tDate = new Date();
+    const [date, setDate] = useState(tDate);
 
     return (
         <>
@@ -63,12 +67,13 @@ function AddMaintenance() {
                                }}
                                placeholder="Preço..." />
 
+                        <DatePicker
 
+                         onChange={(date: Date) => setDate(date)}/>
 
                         <input type="submit" value="Submit" onClick={() =>
                             handleClick(mechanicsName, workshopName, workshopLocation, price, textAreaValue)} />
-
-
+                        
                     </form>
                     <a href={"#modal-closed"} className="link-2">
                         <span className="material-symbols-sharp">cancel</span>
