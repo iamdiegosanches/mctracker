@@ -63,10 +63,13 @@ function AddMaintenance() {
                                }}
                                placeholder="Preço..." />
 
+
+
                         <input type="submit" value="Submit" onClick={() =>
                             handleClick(mechanicsName, workshopName, workshopLocation, price, textAreaValue)} />
-                    </form>
 
+
+                    </form>
                     <a href={"#modal-closed"} className="link-2">
                         <span className="material-symbols-sharp">cancel</span>
                     </a>

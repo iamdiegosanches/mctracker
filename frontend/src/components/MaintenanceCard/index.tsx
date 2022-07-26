@@ -52,7 +52,9 @@ function MaintenanceList() {
                         <td >Nome da oficina: {maintenance.workshopName}</td>
                         <td >Local: {maintenance.workshopLocation}</td>
                         <td >Descrição da manutenção: {maintenance.description}</td>
-                        <td >R$ {maintenance.price}</td>
+                        <td >Total R$ {maintenance.price}</td>
+                        <td >Preço da peça substituida R$ {maintenance.piecePrice}</td>
+                        <td >Data da manutenção {maintenance.date}</td>
                         <DeleteButton maintenanceId={maintenance.id}/>
                     </div>
                 )

@@ -28,7 +28,9 @@ public class MaintenanceController {
     public ResponseEntity<Object> saveMaintenance(@RequestBody MaintenanceDto maintenanceDto) {
         var maintenance = new Maintenance();
         BeanUtils.copyProperties(maintenanceDto, maintenance);
-        maintenance.setDate(LocalDate.now());
+        if(maintenance.getDate() == null) {
+            maintenance.setDate(LocalDate.now());
+        }
         return ResponseEntity.status(HttpStatus.CREATED).body(maintenanceService.saveMaintenance(maintenance));
     }
 

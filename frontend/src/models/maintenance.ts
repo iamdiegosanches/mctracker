@@ -4,5 +4,7 @@ export type Maintenance = {
     workshopName: string;
     workshopLocation: string;
     price: number;
+    piecePrice: number;
     description: string;
+    date: string;
 }
