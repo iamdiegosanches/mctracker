@@ -284,7 +284,7 @@
   "resolved" "https://registry.npmjs.org/@types/prop-types/-/prop-types-15.7.5.tgz"
   "version" "15.7.5"
 
-"@types/react-datepicker@^4.4.2":
+"@types/react-datepicker@4.4.2":
   "integrity" "sha512-g8DhWvYmaIMLzVrIEVLXncylyImyBaoPsEUr3yR13JDaaHoebhDorqnVv4tLkNGa8SjBB8SAOQvxD5jaPNBX8A=="
   "resolved" "https://registry.npmjs.org/@types/react-datepicker/-/react-datepicker-4.4.2.tgz"
   "version" "4.4.2"
@@ -613,7 +613,7 @@
     "object-assign" "^4.1.1"
     "react-is" "^16.13.1"
 
-"react-datepicker@^4.8.0":
+"react-datepicker@4.8.0":
   "integrity" "sha512-u69zXGHMpxAa4LeYR83vucQoUCJQ6m/WBsSxmUMu/M8ahTSVMMyiyQzauHgZA2NUr9y0FUgOAix71hGYUb6tvg=="
   "resolved" "https://registry.npmjs.org/react-datepicker/-/react-datepicker-4.8.0.tgz"
   "version" "4.8.0"

@@ -3,15 +3,18 @@ import "./style.css"
 import {BASE_URL} from "../../utils/request";
 import React, {useState} from "react";
 import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
-function handleClick( name : string, wName : string, location: string, price: number, desc: string) {
+function handleClick( name : string, wName : string, location: string, price: number, desc: string, date: string) {
     axios.post(`${BASE_URL}/maintenance`, {
         mechanicsName: name,
         workshopName: wName,
         workshopLocation: location,
         price: price,
-        description: desc
+        description: desc,
+        date: date
     }).then(r => window.location.reload())
+    console.log(date)
 }
 
 function AddMaintenance() {
@@ -21,14 +24,12 @@ function AddMaintenance() {
     const [textAreaValue, setTextAreaValue] = useState<string>("");
     const [price, setPrice] = useState<number>(0);
 
-    const tDate = new Date();
-    const [date, setDate] = useState(tDate);
+    const [date, setDate] = useState(new Date());
 
     return (
         <>
             <a href={"#modal-opened"} className="link-1" id="modal-closed">
                 <span className="material-symbols-sharp">add_circle</span>
-
             </a>
 
             <div className="modal-container" id="modal-opened">
@@ -68,11 +69,14 @@ function AddMaintenance() {
                                placeholder="Preço..." />
 
                         <DatePicker
-
-                         onChange={(date: Date) => setDate(date)}/>
+                            selected={date}
+                            onChange={(date: Date) => setDate(date)}
+                            dateFormat="dd/MM/yyyy"
+                        />
 
                         <input type="submit" value="Submit" onClick={() =>
-                            handleClick(mechanicsName, workshopName, workshopLocation, price, textAreaValue)} />
+                            handleClick(mechanicsName, workshopName, workshopLocation, price, textAreaValue,
+                                date.toISOString().slice(0, 10))} />
                         
                     </form>
                     <a href={"#modal-closed"} className="link-2">
