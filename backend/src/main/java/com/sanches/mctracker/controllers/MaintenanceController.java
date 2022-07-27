@@ -40,6 +40,15 @@ public class MaintenanceController {
                 .body(maintenanceService.findAll(pageable));
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<Object> getOneMaintenance(@PathVariable(value = "id") UUID id) {
+        Optional<Maintenance> maintenanceOptional = maintenanceService.findById(id);
+        if(maintenanceOptional.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Maintenance not found.");
+        }
+        return ResponseEntity.status(HttpStatus.OK).body(maintenanceOptional.get());
+    }
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Object> deleteMaintenance(@PathVariable(value = "id") UUID id) {
         Optional<Maintenance> maintenanceOptional = maintenanceService.findById(id);
