@@ -12,6 +12,7 @@ function MaintenanceList() {
 
     const [maintenance, setMaintenance] = useState<Maintenance[]>([]);
     const [pageCount, setPageCount] = useState<number>(0);
+    const [total, setTotal] = useState<number>(0);
     let [page, setPage] = useState<number>(0);
 
     useEffect(() => {
@@ -19,6 +20,8 @@ function MaintenanceList() {
             .then(response => {
                 setMaintenance(response.data.content);
                 setPageCount(response.data.totalPages);
+                setTotal(response.data.content.price);
+                console.log(total);
             });
     }, [page]);
 
@@ -48,20 +51,20 @@ function MaintenanceList() {
                 return(
                     <div className="content" key={JSON.stringify(maintenance.id)}>
                         <h2>Detalhes da Manutenção</h2>
-                        <td >Nome do mecânico: {maintenance.mechanicsName}</td>
-                        <td >Nome da oficina: {maintenance.workshopName}</td>
-                        <td >Local: {maintenance.workshopLocation}</td>
-                        <td >Descrição da manutenção: {maintenance.description}</td>
-                        <td >Preço da peça substituida R$ {maintenance.piecePrice}</td>
-                        <td >Total da manutenção R$ {maintenance.price}</td>
-                        <td >Data da manutenção {maintenance.date}</td>
+                        <p >Nome do mecânico: {maintenance.mechanicsName}</p>
+                        <p >Nome da oficina: {maintenance.workshopName}</p>
+                        <p >Local: {maintenance.workshopLocation}</p>
+                        <p >Descrição da manutenção: {maintenance.description}</p>
+                        <p >Preço da peça substituida R$ {maintenance.piecePrice}</p>
+                        <p >Total da manutenção R$ {maintenance.price}</p>
+                        <p >Data da manutenção {maintenance.date}</p>
                         <DeleteButton maintenanceId={maintenance.id}/>
                     </div>
                 )
             })}
                 <AddMaintenance />
             </div>
-            <h3>Total pago: </h3>
+            <h3>Total pago: {total} </h3>
         </div>
     )
 }
